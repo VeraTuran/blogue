@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+    before_action :set_user, only: %i[show update]
     def show
         render json: User.find(params[:id])
     end
